@@ -1,0 +1,61 @@
+@import 'common';
+
+@font-face {
+  font-family: HankenGrotesk;
+  src: url('/fonts/HankenGrotesk-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HankenGrotesk;
+  src: url('/fonts/HankenGrotesk-BoldItalic.ttf') format('ttf');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HankenGrotesk;
+  src: url('/fonts/HankenGrotesk-SemiBold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HankenGrotesk;
+  src: url('/fonts/HankenGrotesk-SemiBoldItalic.ttf') format('ttf');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HankenGrotesk;
+  src: url('/fonts/HankenGrotesk-Medium.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.fonts-loaded-hankengrotesk body {
+  font-family: HankenGrotesk;
+  font-weight: normal;
+}
+
+html,
+a,
+p,
+li,
+code {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
