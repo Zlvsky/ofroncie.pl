@@ -1,6 +1,5 @@
 import { memo } from "react"; 
 import Footer from "../footer/Footer";
-import styles from "./layout.module.scss";
 
 type PageWrapProps = {
   readonly children: React.ReactNode;
@@ -9,7 +8,7 @@ type PageWrapProps = {
 
 const PageWrap = memo(({ children, hideFooter }: PageWrapProps) => {
   return (
-    <div className={styles.pagewrap}>
+    <div className={`h-full w-full flex flex-col items-center`}>
       {children}
       {!hideFooter && <Footer />}
     </div>

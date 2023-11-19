@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
-import "../styles/main.scss";
+import "../globals.css";
 
 // import * as gtag from "../lib/gtag";
 

@@ -1,4 +1,6 @@
 import PageWrap from "@/components/layout/PageWrap";
+import MainPagePosts from "@/components/main-page/MainPagePosts";
+import MainSection from "@/components/main-page/MainSection";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 // import { getNewestPosts, getAllPosts } from "../lib/posts";
 import { NextSeo } from "next-seo";
@@ -22,7 +24,8 @@ export default function Index() {
       <NextSeo />
       <main id="main" className="mainWrapper"></main>
       <PageWrap>
-        <h1 style={{color: "white"}}>oFroncie.pl</h1>
+        <MainSection />
+        <MainPagePosts />
       </PageWrap>
     </>
   );

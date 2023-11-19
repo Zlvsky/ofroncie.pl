@@ -1,6 +1,9 @@
-@import 'common';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@font-face {
+@layer base {
+  @font-face {
   font-family: HankenGrotesk;
   src: url('/fonts/HankenGrotesk-Bold.ttf') format('ttf');
   font-weight: bold;
@@ -39,23 +42,37 @@
   font-style: normal;
   font-display: swap;
 }
-
+}
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
+  background-color: #0A1A2B;
 }
 
-.fonts-loaded-hankengrotesk body {
-  font-family: HankenGrotesk;
-  font-weight: normal;
+@layer base {
+  .clean-style ul,
+  .clean-style ol,
+  .clean-style p {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+    letter-spacing: revert;
+    line-height: revert;
+  }
+  .clean-style table {
+    border-width: 1px;
+  }
+  .clean-style table > tbody, .clean-style table > tbody > tr, .clean-style table > tbody > tr > td  {
+    border-width: inherit;
+    border-color: inherit;
+  }
+  .clean-style h1, .clean-style h2, .clean-style h3, .clean-style h4, .clean-style h5, .clean-style h6 {
+    font-size: revert;
+    line-height: revert;
+    letter-spacing: revert;
+  }
 }
 
-html,
-a,
-p,
-li,
-code {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.hide-overflow {
+  @apply overflow-y-hidden;
 }
