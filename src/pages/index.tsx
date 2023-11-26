@@ -1,4 +1,5 @@
 import PageWrap from "@/components/layout/PageWrap";
+import MainAbout from "@/components/main-page/MainAbout";
 import MainPagePosts from "@/components/main-page/MainPagePosts";
 import MainSection from "@/components/main-page/MainSection";
 import { getNewestPosts } from "@/lib/posts";
@@ -38,7 +39,8 @@ export default function Index({
       <main id="main" className="mainWrapper"></main>
       <PageWrap>
         <MainSection />
-        <MainPagePosts />
+        <MainPagePosts posts={newestPosts} />
+        <MainAbout />
       </PageWrap>
     </>
   );

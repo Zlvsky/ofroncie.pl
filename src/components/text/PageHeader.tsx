@@ -5,7 +5,15 @@ type HeaderProps = {
 }
 
 function PageHeader({ children }: HeaderProps) {
-    return <h1 className={"text-6xl font-semibold text-white text-center leading-[5.5rem]"}>{children}</h1>;
+    return (
+      <h1
+        className={
+          "text-4xl leading-[3.5rem] sm:text-6xl sm:leading-[5.5rem] font-semibold text-white text-center"
+        }
+      >
+        {children}
+      </h1>
+    );
 }
 
 export default PageHeader;

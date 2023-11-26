@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-plugin-inline-react-svg": "^2.0.2",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
     "gray-matter": "^4.0.3",
