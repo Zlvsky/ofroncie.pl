@@ -23,3 +23,8 @@ export type Post = {
   image: string;
   timeToRead: number;
 };
+
+export type Category = {
+  title: string;
+  path: string;
+};

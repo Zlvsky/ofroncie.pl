@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header";
 import PageWrap from "@/components/layout/PageWrap";
 import MainAbout from "@/components/main-page/MainAbout";
 import MainPagePosts from "@/components/main-page/MainPagePosts";
@@ -36,6 +37,7 @@ export default function Index({
   return (
     <>
       <NextSeo />
+      <Header absolute/>
       <main id="main" className="mainWrapper"></main>
       <PageWrap>
         <MainSection />
