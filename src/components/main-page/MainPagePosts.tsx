@@ -20,6 +20,7 @@ function MainPagePosts({ posts }: { posts: Post[] }) {
               category={category}
               image={image}
               timeToRead={timeToRead}
+              variant='LIGHT'
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherPosts.map((post) => (
@@ -30,6 +31,7 @@ function MainPagePosts({ posts }: { posts: Post[] }) {
                   category={post.category}
                   image={post.image}
                   timeToRead={post.timeToRead}
+                  variant='LIGHT'
                 />
               ))}
             </div>

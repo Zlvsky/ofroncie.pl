@@ -11,12 +11,19 @@ type FeaturedPostProps = {
   image: string;
   category: string;
   timeToRead: number;
+  variant?: "LIGHT" | "DARK";
 };
 
-function FeaturedPost({ path, image, heading, excerpt, category, timeToRead }: FeaturedPostProps) {
+function FeaturedPost({ path, image, heading, excerpt, category, timeToRead, variant = "DARK" }: FeaturedPostProps) {
   const formattedReadingTime = polishPlurals('minuta', 'minuty', 'minut', Math.round(timeToRead));
   return (
-    <article className="w-full bg-white rounded-3xl px-5 py-6 border-[6px] border-primary/30">
+    <article
+      className={`w-full  rounded-3xl px-5 py-6 border-[6px]  ${
+        variant === "LIGHT"
+          ? "bg-white border-primary/30 text-black"
+          : "bg-secondary border-primary/30 text-white"
+      }`}
+    >
       <Link
         href={path}
         className='className="w-full flex flex-col md:flex-row gap-10'
@@ -39,7 +46,7 @@ function FeaturedPost({ path, image, heading, excerpt, category, timeToRead }: F
             <span className="uppercase rounded-[40px] bg-primary font-medium px-3 py-1 text-white">
               {category}
             </span>
-            <span className="text-black text-right font-medium">
+            <span className="text-right font-medium">
               {timeToRead} {formattedReadingTime} czytania
             </span>
           </div>

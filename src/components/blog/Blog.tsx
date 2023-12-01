@@ -6,19 +6,21 @@ import { Category, Post } from "@/types/Posts";
 // import { CategoriesList } from "../category/categoriesList/CategoriesList";
 import FeaturedPost from "./postsListing/featuredPost/FeaturedPost";
 import PageHeader from "../text/PageHeader";
+import CategoriesList from "./categories/CategoriesList";
+import PostsListing from "./postsListing/postLists/PostsListing";
 
 type BlogProps = {
   readonly posts: Post[];
   readonly categories: Category[];
 };
 
-export const Blog = memo<BlogProps>(({ posts, categories }) => {
+export const Blog = memo<BlogProps>(({ posts }) => {
   const { title, excerpt, category, image, slug, timeToRead } = posts[0];
   const [, ...postsWithoutFirst] = posts;
   return (
     <main id="main">
       <PageHeader>Artykuły</PageHeader>
-      {/* <CategoriesList categories={categories} /> */}
+      <CategoriesList />
       <section>
         <FeaturedPost
           key={title}
@@ -29,9 +31,7 @@ export const Blog = memo<BlogProps>(({ posts, categories }) => {
           image={image}
           timeToRead={timeToRead}
         />
-        <div>
-          {/* <PostsListing posts={postsWithoutFirst} /> */}
-        </div>
+        <PostsListing posts={posts} />
       </section>
     </main>
   );

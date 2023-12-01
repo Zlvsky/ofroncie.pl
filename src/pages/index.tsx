@@ -5,21 +5,8 @@ import MainPagePosts from "@/components/main-page/MainPagePosts";
 import MainSection from "@/components/main-page/MainSection";
 import { getNewestPosts } from "@/lib/posts";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-// import { getNewestPosts, getAllPosts } from "../lib/posts";
 import { NextSeo } from "next-seo";
 
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const newestPosts = getNewestPosts();
-//   const posts = getAllPosts();
-
-//   return {
-//     props: {
-//       newestPosts,
-//       posts,
-//     },
-//   };
-// };
 export const getStaticProps: GetStaticProps = async () => {
   const newestPosts = getNewestPosts();
 
@@ -33,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Index({
   newestPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(newestPosts);
+
   return (
     <>
       <NextSeo />

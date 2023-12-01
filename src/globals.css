@@ -76,3 +76,9 @@ body {
 .hide-overflow {
   @apply overflow-y-hidden;
 }
+
+
+.page-header::before {
+  content: attr(data-before-content);  
+  @apply text-secondary font-bold italic text-8xl uppercase absolute -z-10 top-2/3 left-1/2 -translate-y-1/2 -translate-x-1/2;
+}
