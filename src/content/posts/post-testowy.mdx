@@ -18,3 +18,15 @@ Tematyką tego artykułu będzie testowanie funkcjonalności fetchowania postów
   src="/images/grzechy-juniora/thumbnail.png"
   alt="Blog testowy"
 />
+
+```ts
+async function fetchData() {
+  const response = await fetch('...');
+
+  const data = (await response.json()) as unknown as Data;
+}
+```
+
+1. Dane od użytkowników (np. formularze)
+2. Dane z przeglądarki (np. localStorage)
+3. Dane z API

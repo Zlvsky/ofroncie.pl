@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import type { PostFrontmatter, Post } from "../types/Posts";
 import { serialize } from "next-mdx-remote/serialize";
 import readingTime from "reading-time";
-// import { remarkCodeTitle } from "../scripts/remark-code-title";
+import mdxPrism from "mdx-prism";
 
 type ResourceFrontmatter = PostFrontmatter;
 type Resource = Post;
@@ -55,11 +55,9 @@ export const getResourceBySlug = async (slug: string, resourcePath: string) => {
     ...data,
   } as ResourceFrontmatter;
   const transformedMdx = await serialize(content, {
-    // Optionally pass remark/rehype plugins
-    // mdxOptions: {
-    //   remarkPlugins: [remarkCodeTitle],
-    // //   rehypePlugins: [mdxPrism],
-    // },
+    mdxOptions: {
+      rehypePlugins: [mdxPrism],
+    },
     scope: data,
   });
 

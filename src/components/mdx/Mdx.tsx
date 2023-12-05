@@ -8,6 +8,8 @@ import { Heading } from "../text/Heading";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
 import { Post } from "@/types/Posts";
+import { polishPlurals } from "polish-plurals";
+import getFormattedDate from "@/utils/getFormattedDate";
 
 // @ts-ignore
 // const Share = dynamic(() => import("./share/Share").then((c) => c.Share), {
@@ -30,34 +32,44 @@ type MdxProps = {
 
 export const Mdx = memo<MdxProps>(
   ({ frontmatter, children, recommendedPosts }) => {
-    const { title, image } = frontmatter;
+    const { title, image, readingTime, category, publishedAt } = frontmatter;
+    console.log(frontmatter);
+    const formattedReadingTime = polishPlurals(
+      "minuta",
+      "minuty",
+      "minut",
+      Math.round(readingTime)
+    );
 
     return (
-      <article className="">
+      <article className="max-w-4xl mx-auto text-white mt-10">
         <header className="" id="main">
-          <Link
-            href={`/kategorie/${slugify(frontmatter.category, {
-              lower: true,
-            })}`}
-          >
-            <span className={cn("", "categoryLink")}>
-              <span className="visually-hidden">Kategoria:</span>
-              <span>{frontmatter.category}</span>
+          <h1 className="text-4xl font-semibold">{title}</h1>
+          <div className="flex flex-row items-center gap-2 mt-5">
+            <Link
+              href={`/kategorie/${slugify(frontmatter.category, {
+                lower: true,
+              })}`}
+            >
+              <span className="uppercase rounded-[40px] bg-primary font-medium px-3 py-1 text-white">
+                {category}
+              </span>
+            </Link>
+            <span>·</span>
+            <span className="font-medium">
+              {readingTime} {formattedReadingTime} czytania
             </span>
-          </Link>
-          <PageHeader
-            beforeContent={frontmatter.category}
-          >
-            {title}
-          </PageHeader>
-          <div className="">
-            <Image width={1200} height={628} src={image} alt="" />
+            <span>·</span>
+            <span className="font-medium">{publishedAt}</span>
+          </div>
+          <div className="my-10">
+            <Image width={900} height={450} src={image} alt={title} />
           </div>
           {/* <Info frontmatter={frontmatter} /> */}
         </header>
         <section
           aria-label="Rekomendowane artykuły, udostępnij i feedback"
-          className={cn("", "content")}
+          className="w-full text-xl"
         >
           {children}
           {/* <Share /> */}

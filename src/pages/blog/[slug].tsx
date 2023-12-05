@@ -16,6 +16,8 @@ import Header from "@/components/header/Header";
 import { Image } from "@/components/mdx/image/Image";
 import getFormattedDate from "@/utils/getFormattedDate";
 import { Mdx } from "@/components/mdx/Mdx";
+import AboutInfo from "@/components/common/AboutInfo";
+import { Code } from "@/components/mdx/code/Code";
 
 type ComponentProps = {
   readonly children: ReactNode;
@@ -103,8 +105,8 @@ const BlogPost = ({
       Image,
     //   Highlight,
     //   Newsletter,
-    //   CodeWithTitle,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -155,6 +157,8 @@ const BlogPost = ({
               <MDXRemote {...transformedMdx} components={customMdxComponents} />
             </Mdx>
           </main>
+          <div className="max-w-4xl mx-auto w-full border border-lightGrey/30 my-14"></div>
+          <AboutInfo />
         </BigContainer>
       </PageWrap>
     </>
