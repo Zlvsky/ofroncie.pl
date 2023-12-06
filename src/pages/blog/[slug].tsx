@@ -74,6 +74,7 @@ const BlogPost = ({
       slug: children,
       url,
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const customMdxComponents = useMemo(

@@ -59,16 +59,140 @@ h2 {
 /* code mdx */
 
 pre {
-  @apply bg-secondary text-base p-8 rounded-b-xl;
+  @apply bg-secondary text-base p-8 rounded-b-xl overflow-x-auto;
+}
+
+article :not(pre)>code {
+  @apply bg-secondary text-lightGrey mx-1 px-1.5;
 }
 
 code {
   
 }
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: rgb(99, 119, 119);
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #ABB2BF;
+}
+
+.namespace {
+  color: rgb(178, 204, 214);
+}
+
+.token.deleted {
+  color: #E06C75;
+  font-style: italic;
+}
+
+.token.symbol,
+.token.property,
+.token.property-access {
+  color: #E06C75;
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: #C678DD;
+}
+
+.token.number, .token.boolean {
+  color: #D19A66;
+}
+
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  color: #61AFEF;
+}
+
+.token.selector,
+.token.doctype {
+  color: #C678DD;
+  font-style: italic;
+}
+
+.token.attr-name,
+.token.inserted {
+  color: #E5C07B;
+  font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  color: #98C379;
+}
+
+.token.class-name,
+.token.atrule,
+.token.attr-value {
+  color: #E5C07B;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #D19A66;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
 
 /* code mdx */
 
+ul li::before {
+  content: "";
+  background-image: url(/icons/arrow.svg);
+  @apply absolute w-[1.6rem] h-[1.6rem] top-[1.4rem] md:top-[1.8rem] left-[-1.5rem];
+}
+
+ul, ol {
+  padding: revert;
+}
+
+ol li::before {
+  content: counter(list-item) ". ";
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  top: 0.85rem;
+  left: -1.5rem;
+  font-weight: 600;
+  line-height: 0;
+  @apply text-primary font-semibold w-[1.6rem] h-[1.6rem] top-[0.75rem] md:top-[0.85rem] left-[-1.5rem];
+}
+
+li {
+  position: relative;
+}
+
+ul li {
+  padding: revert;
+}
+
+.article a {
+  @apply no-underline border-b-2 border-primary cursor-pointer font-semibold;
+}
+
 @layer base {
+  
+
   .clean-style ul,
   .clean-style ol,
   .clean-style p {

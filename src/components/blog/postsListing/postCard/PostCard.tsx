@@ -55,7 +55,7 @@ function PostCard({
             {category}
           </span>
           <span className="text-right font-medium">
-            {timeToRead} {formattedReadingTime} czytania
+            {Math.round(timeToRead)} {formattedReadingTime} czytania
           </span>
         </div>
       </Link>

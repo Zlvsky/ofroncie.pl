@@ -37,7 +37,7 @@ export const Code = (
   }, [props.children, props.className]);
 
   return (
-    <article>
+    <article className="my-12">
       <CodeHeader
         code={preRef.current?.textContent}
         onCopy={copy}

@@ -47,7 +47,7 @@ function FeaturedPost({ path, image, heading, excerpt, category, timeToRead, var
               {category}
             </span>
             <span className="text-right font-medium">
-              {timeToRead} {formattedReadingTime} czytania
+              {Math.round(timeToRead)} {formattedReadingTime} czytania
             </span>
           </div>
         </div>

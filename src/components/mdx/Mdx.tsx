@@ -1,15 +1,9 @@
 import { memo, ReactNode } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import slugify from "slugify";
-import cn from "classnames";
-import PageHeader from "../text/PageHeader";
-import { Heading } from "../text/Heading";
 import Image from "next/image";
-import { getPostsByCategory } from "../../lib/posts";
 import { Post } from "@/types/Posts";
 import { polishPlurals } from "polish-plurals";
-import getFormattedDate from "@/utils/getFormattedDate";
 
 // @ts-ignore
 // const Share = dynamic(() => import("./share/Share").then((c) => c.Share), {
@@ -57,7 +51,7 @@ export const Mdx = memo<MdxProps>(
             </Link>
             <span>·</span>
             <span className="font-medium">
-              {readingTime} {formattedReadingTime} czytania
+              {Math.round(readingTime)} {formattedReadingTime} czytania
             </span>
             <span>·</span>
             <span className="font-medium">{publishedAt}</span>
@@ -69,7 +63,7 @@ export const Mdx = memo<MdxProps>(
         </header>
         <section
           aria-label="Rekomendowane artykuły, udostępnij i feedback"
-          className="w-full text-xl"
+          className="article w-full md:text-lg xl:text-xl whitespace-pre-wrap"
         >
           {children}
           {/* <Share /> */}

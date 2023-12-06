@@ -12,7 +12,7 @@ export const Heading = memo(({ headingTag: Tag, slug, url }: HeadingProps) => {
   const id = slugify(slug, { lower: true });
 
   return (
-    <Tag id={id} className={classnames("text-primary my-8 relative")}>
+    <Tag id={id} className={classnames("text-primary my-6 relative")}>
       <a id={id} href={`${url}/#${id}`} aria-hidden="true" tabIndex={-1}>
         {/* {slug} */}
         <span></span>
