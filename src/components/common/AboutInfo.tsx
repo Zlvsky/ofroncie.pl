@@ -1,8 +1,5 @@
 import MainSVG from "../../../public/images/mainAbout.svg";
-
-import FacebookSVG from "../../../public/icons/facebook.svg";
-import GithubSVG from "../../../public/icons/github.svg";
-import LinkedinSVG from "../../../public/icons/linkedin.svg";
+import SocialIcons from "./SocialIcons";
 
 function AboutInfo() {
     return (
@@ -21,23 +18,7 @@ function AboutInfo() {
             <br />
             Mam nadzieję, że znajdziesz na moim blogu coś dla siebie.
           </p>
-          <div className="flex flex-row gap-4 md:self-start mt-5">
-            <a
-              href="https://www.facebook.com/WebZaleskiWebDeveloper"
-              target="_blank"
-            >
-              <FacebookSVG />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/krzysztof-zaleski-216400237/"
-              target="_blank"
-            >
-              <LinkedinSVG />
-            </a>
-            <a href="https://github.com/Zlvsky" target="_blank">
-              <GithubSVG />
-            </a>
-          </div>
+          <SocialIcons />
         </div>
       </div>
     );

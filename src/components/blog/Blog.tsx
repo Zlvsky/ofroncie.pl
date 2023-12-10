@@ -22,7 +22,7 @@ export const Blog = memo<BlogProps>(({ posts }) => {
       <PageHeader>Artykuły</PageHeader>
       <CategoriesList />
       <section>
-        <FeaturedPost
+        {/* <FeaturedPost
           key={title}
           path={`/blog/${slug}`}
           heading={title}
@@ -30,7 +30,7 @@ export const Blog = memo<BlogProps>(({ posts }) => {
           category={category}
           image={image}
           timeToRead={timeToRead}
-        />
+        /> */}
         <PostsListing posts={posts} />
       </section>
     </main>

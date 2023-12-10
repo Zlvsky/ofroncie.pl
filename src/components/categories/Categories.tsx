@@ -1,9 +1,6 @@
 import { memo } from "react";
-import cn from "classnames";
 
-import Header from "../header/Header";
-import { Category, Post } from "@/types/Posts";
-// import { CategoriesList } from "../category/categoriesList/CategoriesList";
+import { Post } from "@/types/Posts";
 import PageHeader from "../text/PageHeader";
 import PostsListing from "../blog/postsListing/postLists/PostsListing";
 

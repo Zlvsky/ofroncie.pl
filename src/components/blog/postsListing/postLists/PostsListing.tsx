@@ -8,7 +8,7 @@ type PostsListingProps = {
 
 function PostsListing({ posts }: PostsListingProps ) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-6 mt-12">
         {posts.map((post) => (
           <PostCard
             key={post.title}
@@ -16,6 +16,7 @@ function PostsListing({ posts }: PostsListingProps ) {
             heading={post.title}
             category={post.category}
             image={post.image}
+            excerpt={post.excerpt}
             timeToRead={post.timeToRead}
           />
         ))}

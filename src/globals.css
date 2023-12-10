@@ -56,6 +56,10 @@ h2 {
   @apply text-3xl
 }
 
+img, svg {
+  @apply max-w-full;
+}
+
 /* code mdx */
 
 pre {
@@ -159,7 +163,7 @@ code {
 ul li::before {
   content: "";
   background-image: url(/icons/arrow.svg);
-  @apply absolute w-[1.6rem] h-[1.6rem] top-[1.4rem] md:top-[1.8rem] left-[-1.5rem];
+  @apply absolute w-[1.6rem] h-[1.6rem] top-[0rem] md:top-[0.2rem] left-[-1.5rem];
 }
 
 ul, ol {
@@ -226,5 +230,5 @@ ul li {
 
 .page-header::before {
   content: attr(data-before-content);  
-  @apply text-secondary font-bold italic text-8xl uppercase absolute -z-10 top-2/3 left-1/2 -translate-y-1/2 -translate-x-1/2;
+  @apply text-secondary w-full overflow-hidden font-bold italic text-7xl md:text-8xl uppercase absolute -z-10 top-2/3 left-1/2 -translate-y-1/2 -translate-x-1/2;
 }

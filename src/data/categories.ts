@@ -11,4 +11,5 @@ export const categoriesArr: Category[] = [
   { title: "Firebase", path: "/kategorie/firebase" },
   { title: "Praca", path: "/kategorie/praca" },
   { title: "Architektura", path: "/kategorie/architektura" },
+  { title: "Inne", path: "/kategorie/inne" },
 ];

@@ -13,7 +13,7 @@ function CategoriesList() {
     }
 
     return (
-      <div className="flex flex-row gap-5 mt-20 mb-28">
+      <div className="flex flex-row flex-wrap gap-5 mt-20 mb-28">
         {categoriesArr.map((category) => (
           <SingleCategory title={category.title} path={category.path} key={category.path} />
         ))}

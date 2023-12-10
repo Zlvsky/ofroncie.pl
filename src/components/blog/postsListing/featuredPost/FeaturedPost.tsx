@@ -30,11 +30,12 @@ function FeaturedPost({ path, image, heading, excerpt, category, timeToRead, var
       >
         <div className="md:w-2/5">
           <Image
-            className=""
+            className="rounded-2xl"
             src={image}
             alt={heading}
             width={620}
             height={310}
+            quality={100}
           />
         </div>
         <div className="flex flex-col justify-between gap-3 md:w-3/5">
