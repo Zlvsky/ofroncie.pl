@@ -194,6 +194,11 @@ ul li {
   @apply no-underline border-b-2 border-primary cursor-pointer font-semibold;
 }
 
+.article div img {
+  max-height: 600px;
+  object-fit: contain;
+}
+
 @layer base {
   
 
